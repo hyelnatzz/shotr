@@ -1,10 +1,16 @@
 from flask import Flask
 import os
+from flask_sqlalchemy import SQLAlchemy
 
-def create_app():
+db = SQLAlchemy()
+
+def create_app(config):
     # create app instance
     app = Flask(__name__)
-    app.secret_key = os.urandom(8).hex()
+    app.config.from_object(config)
+    db.init_app(app)
+
+
 
     #import blueprints
     from .auth import auth_bp
