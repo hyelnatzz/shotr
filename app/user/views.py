@@ -1,9 +1,10 @@
 from . import user_bp
+from flask import render_template
 
 
 @user_bp.route('/', methods=['GET', 'POST'])
 def dashboard():
-    return "User Dashboard Page"
+    return render_template('user/dashboard.html')
 
 
 @user_bp.route('/gstatistics/', methods=['GET', 'POST'])

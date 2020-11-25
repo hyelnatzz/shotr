@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title> {% block title %} {% endblock  %} - Shortr</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'fonts/font-awesome.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'fonts/simple-line-icons.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/custom.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
+    </head>
+
+    <body>
+        {% include "nav.html" %}
+        {% block content %}
+          
+        {% endblock content %}
+
+        <footer class="footer bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 my-auto h-100 text-center text-lg-left">
+                        <ul class="list-inline mb-2">
+                            <li class="list-inline-item"><a href="#">About</a></li>
+                            <li class="list-inline-item"><span>⋅</span></li>
+                            <li class="list-inline-item"><a href="#">Contact</a></li>
+                            <li class="list-inline-item"><span>⋅</span></li>
+                            <li class="list-inline-item"><a href="#">Terms of &nbsp;Use</a></li>
+                            <li class="list-inline-item"><span>⋅</span></li>
+                            <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                        </ul>
+                        <p class="text-muted small mb-4 mb-lg-0">© Shortr 2020. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-lg-6 my-auto h-100 text-center text-lg-right">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-facebook fa-2x fa-fw"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-twitter fa-2x fa-fw"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-instagram fa-2x fa-fw"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="{{ url_for('static', filename = 'js/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'bootstrap/js/bootstrap.min.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'js/bs-init.js') }}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+    </body>
+
+</html>
