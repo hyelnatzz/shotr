@@ -1,0 +1,59 @@
+.masthead.text-white.text-center {
+  padding-top: 4rem;
+}
+
+.form-row {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 300px) {
+  .btn.btn-primary.btn-block.btn-lg {
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .btn.btn-primary.btn-block.btn-lg {
+    margin-bottom: 0px;
+  }
+}
+
+.call-to-action.text-white.text-center {
+}
+
+#head-row {
+  padding: 1rem;
+}
+
+.btn.delete-btn {
+  padding: 2px;
+  color: #a33;
+}
+
+.btn.edit-btn {
+  color: #11f;
+  padding: 2px;
+  margin-right: 5px;
+  margin-bottom: -2px;
+}
+
+.btn.edit-btn {
+}
+
+.small-table {
+}
+
+.small-table {
+}
+
+.badge.badge-primary.ml-2.p-2 {
+  margin: 0px;
+}
+
+.table td, .table th {
+}
+
+.table td, .table th {
+  padding: 4px;
+}
+
