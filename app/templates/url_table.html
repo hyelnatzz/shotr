@@ -1,0 +1,22 @@
+ <div class="table-responsive table-striped">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>URL</th>
+                <th>Short URL</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for link in links %}
+                <tr>
+                    <td>{{ link.name | capitalize }}</td>
+                    <td>{{ link.url_address }}</td>
+                    <td> <a href="/{{link.short_url.value}}"> srt.ng/{{link.short_url.value}} </a></td>
+                    <td><a class="btn edit-btn" href="{{ url_for('urls_bp.editurl', url_id = link.id) }}"><i class="fa fa-edit" style="font-size: 20px;"></i></a><a class="btn delete-btn" href="{{ url_for('urls_bp.deleteurl', url_id = link.id) }}" onclick="return confirm('Are you sure you want to delete {{ link.name }}?')"><i class="fa fa-trash-o" style="font-size: 20px;"></i></a></td>
+                </tr>
+             {% endfor %}
+        </tbody>
+    </table>
+ </div>

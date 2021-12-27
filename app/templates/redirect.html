@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <title> {% block title %} {% endblock  %} - Shortr</title>
+        <title> Redirect - Shortr</title>
         <link rel="stylesheet" href="{{ url_for('static', filename = 'bootstrap/css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
         <link rel="stylesheet" href="{{ url_for('static', filename = 'fonts/font-awesome.min.css') }}">
@@ -15,15 +15,28 @@
     </head>
 
     <body>
-        
-        {% block navbar %}
-            {% include "nav.html" %}
-        {% endblock navbar %}
-            
-        {% block content %}
-          
-        {% endblock content %}
+        <!-- APP navigation bar--> 
 
+        <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
+            <div class="container"><a class="navbar-brand" href="/" style="font-size: 20px;letter-spacing: 1px;color: rgba(38,38,38,0.9);"><strong>Shortr</strong></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"></button>
+                <div class="collapse navbar-collapse"
+                    id="navcol-1"> <p id="notice" class="ml-auto"> Page will be redirected in <span class="count" style="font-size: larger; font-weight:bold;">15</span> Seconds </p>
+                </div>
+            </div>
+        </nav>
+        <div class= "container">
+            <p id = "url" hidden=True>{{ url }}</p>
+            <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 mb-2" ><img src="{{ url_for('static', filename='img/ad1.png')}}"  width="200" height="200"/></div>
+                        <div class="col-md-6 mb-2"><img src="{{ url_for('static', filename='img/ad2.jpeg') }} " width="200" height="200"/></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-2"><img src="{{ url_for('static', filename='img/ad3.png')}}" width="200" height="200"/></div>
+                        <div class="col-md-6 mb-2"><img src="{{ url_for('static', filename='img/ad4.jpg')}}" width="200" height="200"/></div>
+                    </div>
+            </div>
+        </div>
         <footer class="footer bg-light">
             <div class="container">
                 <div class="row">
@@ -53,7 +66,30 @@
         <script src="{{ url_for('static', filename = 'bootstrap/js/bootstrap.min.js') }}"></script>
         <script src="{{ url_for('static', filename = 'js/bs-init.js') }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
-        {% block script %} {% endblock %}
+        
+        <script>
+            $(document).ready(function() {
+                var url = $('p#url').text();
+                var sec = 16
+                function redirect() {
+                    window.location.href = url
+                }// end redirect functon
+
+                setInterval(function(){
+                    sec = sec - 1;
+                    if (sec < 1) {
+                        redirect();
+                    }
+                    $('.count').text(sec);
+                }, 1000);
+                
+
+            })// ready function
+        </script>
+
     </body>
 
 </html>
+
+
+  
